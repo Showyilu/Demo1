@@ -21,8 +21,8 @@ class IssueTokenService < BaseService
   def verified_user
     user = User.find_by(username: username)
 
-    raise "Not authorized" unless user
-    raise "Invalid Credentials" unless user.valid_password?(password)
+    raise ExceptionHandler::AuthenticationError, "Not authorized" unless user
+    raise ExceptionHandler::AuthenticationError, "Invalid Credentials" unless user.valid_password?(password)
 
     user
   end

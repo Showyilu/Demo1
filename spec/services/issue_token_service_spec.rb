@@ -22,7 +22,7 @@ RSpec.describe IssueTokenService do
 
       it "raises an authentication error" do
         expect { action }.to raise_error(
-          StandardError, /Not authorized/
+          ExceptionHandler::AuthenticationError, /Not authorized/
         )
       end
     end
@@ -32,7 +32,7 @@ RSpec.describe IssueTokenService do
 
       it "raises an authentication error" do
         expect { action }.to raise_error(
-          StandardError, /Invalid Credentials/
+          ExceptionHandler::AuthenticationError, /Invalid Credentials/
         )
       end
     end

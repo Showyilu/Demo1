@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "json_web_token/access_token"
+
 class AuthenticationService < BaseService
   def initialize(headers = {})
     super()
@@ -22,7 +24,7 @@ class AuthenticationService < BaseService
   def user_from_auth_token
     User.find(decoded_token.dig("data", "user_id"))
   rescue JWT::DecodeError
-    raise "Invalid Token"
+    raise ExceptionHandler::InvalidToken, "Invalid Token"
   end
 
   def auth_header
@@ -36,6 +38,6 @@ class AuthenticationService < BaseService
   def auth_token
     return auth_header.split(" ").last if auth_header.present?
 
-    raise "Missing Token"
+    raise ExceptionHandler::MissingToken, "Missing Token"
   end
 end

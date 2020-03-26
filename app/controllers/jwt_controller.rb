@@ -8,7 +8,7 @@ module V1
         auth_params[:password]
       ).run
 
-      json_response(access_token: result.data)
+      render(json: access_token: result.data)
     end
 
     private

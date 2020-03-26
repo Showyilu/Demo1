@@ -20,7 +20,7 @@ RSpec.describe AuthenticationService do
       let(:token) { nil }
 
       it "raises a MissingToken error" do
-        expect { action }.to raise_error(StandardError, "Missing Token")
+        expect { action }.to raise_error(ExceptionHandler::MissingToken, "Missing Token")
       end
     end
 
@@ -28,7 +28,7 @@ RSpec.describe AuthenticationService do
       let(:token) { "fake token" }
 
       it "raises a InvalidToken error" do
-        expect { action }.to raise_error(StandardError, "Invalid Token")
+        expect { action }.to raise_error(ExceptionHandler::InvalidToken, "Invalid Token")
       end
     end
 
@@ -41,7 +41,7 @@ RSpec.describe AuthenticationService do
 
       it "raises a InvalidToken error with expired signature" do
         expect { action }.to raise_error(
-          StandardError,
+          ExceptionHandler::InvalidToken,
           "Invalid Token"
         )
       end

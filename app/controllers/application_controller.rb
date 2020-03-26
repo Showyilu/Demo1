@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  include ExceptionHandler
+
   before_action :authorize_request
   attr_reader :current_user
 

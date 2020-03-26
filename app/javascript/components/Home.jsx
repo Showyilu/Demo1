@@ -12,10 +12,10 @@ export default () => (
         <hr className="my-4" />
         <Link
           to="/todos"
-          className="btn btn-lg custom-button"
+          className="btn btn-lg btn-primary"
           role="button"
         >
-          View All
+          Log in
         </Link>
       </div>
     </div>

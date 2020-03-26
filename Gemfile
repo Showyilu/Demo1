@@ -51,6 +51,7 @@ group :test do
   gem 'shoulda-matchers', '~> 3.1'
   # A library for generating fake data
   gem 'faker'
+  gem 'timecop'
 end
 
 group :development do
@@ -72,3 +73,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # An easy way to keep your users' passwords secure
 gem 'bcrypt'
+
+# A pure ruby implementation of the RFC 7519 OAuth JSON Web Token (JWT) standard
+gem 'jwt'

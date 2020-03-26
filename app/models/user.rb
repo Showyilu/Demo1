@@ -3,6 +3,8 @@
 class User < ApplicationRecord
   include BCrypt
 
+  has_many :tasks
+
   validates :username, :password_digest, presence: true
 
   def valid_password?(password)

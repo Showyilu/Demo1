@@ -1,0 +1,117 @@
+require: [rubocop-rspec, rubocop-rails]
+
+AllCops:
+  Exclude:
+    - Rakefile
+    - config.ru
+    - db/**/*
+    - config/**/*
+    - bin/**/*
+    - spec/rails_helper.rb
+    - spec/spec_helper.rb
+
+Rails:
+  Enabled: true
+
+Bundler/OrderedGems:
+  Enabled: true
+
+FactoryBot/AttributeDefinedStatically:
+  Enabled: false
+
+Layout/EndOfLine:
+  Enabled: false
+
+Layout/EmptyLineAfterGuardClause:
+  Enabled: true
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 100
+  AllowURI: true
+  Exclude:
+    - Gemfile
+    - Rakefile
+
+Metrics/MethodLength:
+  Enabled: false
+
+Metrics/PerceivedComplexity:
+  Enabled: false
+
+Naming/VariableNumber:
+  EnforcedStyle: snake_case
+
+Rails/ActiveRecordAliases:
+  Enabled: false
+
+Rails/HasManyOrHasOneDependent:
+  Enabled: false
+
+RSpec/AnyInstance:
+  Enabled: false
+
+RSpec/ContextWording:
+  Enabled: false
+
+RSpec/DescribedClass:
+  Enabled: false
+
+RSpec/MessageSpies:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Enabled: false
+
+RSpec/InstanceVariable:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/RepeatedDescription:
+  Exclude:
+    - spec/integration/**/*
+
+RSpec/RepeatedExample:
+  Exclude:
+    - spec/integration/**/*
+
+RSpec/ScatteredSetup:
+  Exclude:
+    - spec/integration/**/*
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/Lambda:
+  EnforcedStyle: literal
+
+Style/NumericLiterals:
+  Enabled: false
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+  Exclude:
+    - Gemfile
+    - Rakefile
+
+Style/SymbolArray:
+  EnforcedStyle: brackets
